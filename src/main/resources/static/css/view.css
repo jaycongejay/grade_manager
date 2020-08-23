@@ -1,0 +1,66 @@
+section{
+	margin-top: 66px;
+	background-color: #eadeda;
+	text-align: center;
+	align-items: center;
+	width: 100%;
+	min-width: 850px;
+	padding-top: 50px;
+	min-height: 77vh;
+	padding-bottom: 100px;
+}
+.tableContainer table{
+	margin: auto;
+	width: 70%;
+}
+.button a, .actionContainer a{
+	color: White;
+	font-size: 1.5em;
+	background-color: #eadeda;;
+	border-radius: 5px;
+	padding: 5px;
+}
+.table-dark td{
+	text-align: center;
+	vertical-align: middle !important;
+}
+.table-dark th{
+	text-align: center;
+	vertical-align: middle !important;
+}
+.button{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.button a{
+	background-color: #343a40;
+}
+.actionContainer{
+	align-content: center;
+	display: flex;
+}
+.actionContainer a{
+	background-color: #eadeda;
+}
+.edit a{
+	color: #098069;
+	font-size: 1.5em;
+	text-decoration: none !important;
+}
+.edit a:hover, .delete a:hover{
+	background-color: black;
+	color: white;
+}
+.delete{
+	margin-left: 10px;
+}
+.delete a{
+	color: #ff0000de;
+	font-size: 1.5em;
+	text-decoration: none !important;
+}
+.category{
+	background-color: #193a67;
+	font-weight: bold;
+	font-style: italic;
+}

@@ -1,0 +1,37 @@
+body{
+		background-color: #343a40;
+		text-align: center;
+}
+h1{
+	margin-left: 30px;
+	color: #218838;
+}
+form{
+	color: white;
+	margin-top: 20px;
+}
+a{
+	font-size: 1.5em;
+	border-radius: 5px;
+	position: relative;
+	left: 100px;
+	border: 1px solid white;
+	padding: 5px;
+	top: 5px;
+	font-size: 20px;
+	text-decoration: none;
+}
+.formContainer{
+	display: flex;
+	justify-content: center;
+}
+.form-control{
+	margin-left: 53px;
+}
+.buttons{
+	display: flex;
+	justify-content: center;
+}
+.col-sm-2{
+	font-weight: bold;
+}

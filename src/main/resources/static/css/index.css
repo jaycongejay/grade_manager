@@ -1,0 +1,54 @@
+section{
+	margin-top: 66px;
+	background-color: #343a40;
+	color: beige;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-width: 850px;
+	height: 77vh;
+	padding-top: 100px;
+}
+h1{
+	margin-top: 50px;
+	font-size: 3em !important;
+}
+.container a{
+	text-decoration: none !important;
+	color: beige;
+	margin-left: 20px;
+	font-size: 20px;
+}
+.container a:hover{
+	background-color: beige;
+	color: #343a40;
+}
+
+.container{
+	text-align: center;
+	margin-bottom: 30px;
+	margin-top: 100px;
+}
+.container a{
+	border: 1px solid white;
+    border-radius: 29px;
+    padding: 50px 27px;
+    margin: 0;
+	font-size: 2.5em;
+	
+}
+.container span{
+	margin: 0 30px;
+	font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
