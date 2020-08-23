@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extra-springsecurity5">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link th:href="@{/css/view.css}" rel="stylesheet" >
+	<title>View</title>
+	<!--/*/ <th:block th:include="navBar.html :: headerfiles">
+		</th:block> /*/-->
+	<!--/*/ <th:block th:include="footer.html :: headerfiles">
+		</th:block> /*/-->
+</head>
+<body>
+	<header th:replace="navBar.html :: navbar"></header>
+	<section>
+		<div class="title"><h1>Student list</h1></div>
+		<div class="button">
+			<div th:object="${currentUserRole}">
+				<a th:href="@{/user/professor}" th:if="*{roleName}=='[ROLE_PROFESSOR]'">Back</a>
+				<a th:href="@{/user/student}" th:if="*{roleName}=='[ROLE_STUDENT]'">Back</a>
+			</div>
+		</div>
+		<div class="tableContainer">
+			<table class="table table-dark">
+				<thead th:object="${currentUserRole}">
+					<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Student ID</th>
+					<th scope="col">Exercises (10%)</th>
+					<th scope="col">Assignment1 (6%)</th>
+					<th scope="col">Assignment2 (12%)</th>
+					<th scope="col">Assignment3 (12%)</th>
+					<th scope="col">Midterm (30%)</th>
+					<th scope="col">Final (30%)</th>
+					<th scope="col">Weighted Average</th>
+					<th scope="col">Letter Grade</th>
+					<th scope="col" th:if="*{roleName}=='[ROLE_PROFESSOR]'">Action</th>
+					</tr>
+				</thead>
+				<tbody th:object="${currentUserRole}">
+					<tr th:each="student : ${students}">
+						<td th:text="${student.studentName}"></td>
+						<td th:text="${student.studentId}"></td>
+						<td th:text="${student.exercises}"></td>
+						<td th:text="${student.assignment1}"></td>
+						<td th:text="${student.assignment2}"></td>
+						<td th:text="${student.assignment3}"></td>
+						<td th:text="${student.midterm}"></td>
+						<td th:text="${student.finalExam}"></td>
+						<td th:text="${student.weightedAvg}"></td>
+						<td th:text="${student.letterGrade}"></td>
+						<td>
+							<div class="actionContainer" th:if="*{roleName}=='[ROLE_PROFESSOR]'">
+								<div class="edit" >
+									<a href="" th:href="@{/edit/{id}(id=${student.id})}">EDIT</a>
+								</div>
+								<div class="delete">
+									<a href="" th:href="@{/delete/{id}(id=${student.id})}">DELETE</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr th:object="${evgEachCategory}" th:if="*{roleName}=='[ROLE_PROFESSOR]'" class="category">
+						<td colspan="2" >AVG</td>
+						<td th:text="*{exercises}"></td>
+						<td th:text="*{assignment1}"></td>
+						<td th:text="*{assignment2}"></td>
+						<td th:text="*{assignment3}"></td>
+						<td th:text="*{midterm}"></td>
+						<td th:text="*{finalExam}"></td>
+						<td th:text="*{weightedAvg}"></td>
+						<td ></td>
+						<td ></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<footer th:replace="footer.html :: footer"></footer>
+</body>	
+</html>

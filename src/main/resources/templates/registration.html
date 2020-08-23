@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style>
+		body{
+			background-color: #343a40;
+			color: beige;
+			margin-top: 30px;
+			text-align: center;
+		}
+		.name{
+			margin-right: 43px;
+		}
+		.password{
+			margin-right: 20px;
+		}
+		.checkLabel{
+			cursor: pointer;
+			margin: 0 10px;
+		}
+		input[type="checkbox"]:hover {
+			cursor: pointer;
+		}
+		input[type="checkbox"]:checked {
+			box-shadow: 0 0 0 3px red;
+		}
+		a{
+			text-decoration: none !important;
+			color: beige;
+			margin-left: 20px;
+			font-size: 20px;
+		}
+	</style>
+	<title>Register</title>
+</head>
+<body>
+	<h1>Register User</h1><br>
+	<form action="#" th:action="@{/register}" method="POST">
+		<label class="name">Name</label><input type="text" name="name" required><br><br>
+		<label class="password">Password</label><input type="password" name="password" required><br><br>
+		<input type="submit" value="Register" class="btn btn-success">&ensp;&ensp;&ensp;
+		<a th:href="@{/}">Home</a>
+	</form>
+</body>
+</html>

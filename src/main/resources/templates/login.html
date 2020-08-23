@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style>
+		body{
+			background-color: #343a40;
+			color: beige;
+			margin-top: 30px;
+			text-align: center;
+		}
+		a{
+			text-decoration: none;
+			color: beige;
+			margin-left: 20px;
+			font-size: 20px;
+		}
+		a:hover{
+			color: red;
+		}
+		.name{
+			margin-top: 30px;
+			margin-right: 48px;
+		}
+		.password{
+			margin-right: 26px;
+		}
+		.field{
+			margin-bottom: 20px;
+		}
+		.field input{
+			padding-left: 10px;
+		}
+		a{
+			text-decoration: none !important;
+			color: beige;
+			margin-left: 20px;
+			font-size: 20px;
+		}
+		a:hover{
+			color: red;
+		}
+		.container{
+			margin-top: 30px;
+		}
+		.goodalert{
+			background-color: #28a745;
+			font-size: 30px;
+		}
+		.badalert{
+			background-color: red;
+			font-size: 30px;
+		}
+	</style>
+	<title>Login Page</title>
+</head>
+<body>
+	<h1>Login Page</h1>
+	<div>
+		<form th:action="@{/login}" method="POST">
+			<div th:if="${param.error}">
+				<div class="badalert">
+					Invalid username or password
+				</div>
+			</div>
+			<div th:if="${param.logout}">
+				<div class="goodalert">
+					You have logged out successfully
+				</div>
+			</div>
+			<div class="field">
+				<label for="username" class="name">Name</label>
+				<input type="text"
+					id="username"
+					name="username"
+					autofocus="autofocus"
+					placeholder="Username">
+			</div>
+			<div class="field">
+				<label for="password" class="password">Password</label>
+				<input type="password"
+					id="password"
+					name="password"
+					placeholder="Password">
+			</div>
+			<div>
+				<input type="submit" 
+					   name="login-submit"
+					   id="login-submit"
+					   value="login"
+					   class="btn btn-success">
+			</div>
+		</form>
+	</div>
+	<div class="container">
+		<a th:href="@{/}">Home</a>&ensp;&ensp;&ensp;
+		<a th:href="@{/register}">SignUp</a>&ensp;&ensp;&ensp;
+	</div>
+</body>
+</html>

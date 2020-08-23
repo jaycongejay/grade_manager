@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extra-springsecurity5">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link th:href="@{/css/professor.css}" rel="stylesheet">
+	<link th:href="@{/css/navBar.css}" rel="stylesheet">
+	<link th:href="@{/css/footer.css}" rel="stylesheet">
+	<title>Document</title>
+	<!--/*/ <th:block th:include="navBar.html :: headerfiles">
+		</th:block> /*/-->
+	<!--/*/ <th:block th:include="footer.html :: headerfiles">
+		</th:block> /*/-->
+</head>
+<body>
+	<header th:replace="navBar.html :: navbar"></header>
+	<section>
+		<h1>Hello Professor!&ensp;&ensp;<span sec:authentication="name" class="userInfo"></span></h1>
+	</section>
+	<footer th:replace="footer.html :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extra-springsecurity5">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link th:href="@{css/index.css}" rel="stylesheet">
+	<title>Document</title>
+	<!--/*/ <th:block th:include="navBar.html :: headerfiles">
+		</th:block> /*/-->
+	<!--/*/ <th:block th:include="footer.html :: headerfiles">
+		</th:block> /*/-->
+</head>
+<body>
+	<header th:replace="navBar.html :: navbar"></header>
+	<section>
+		<h1>Grade Manager</h1>
+		<div class="container">
+			<a th:href="@{/user/professor}" class="professor">Professor</a>
+			 <span>or</span> 
+			<a th:href="@{/user/student}" class="student">Student</a>
+		</div>
+	</section>
+	<footer th:replace="footer.html :: footer"></footer>
+</body>
+</html>

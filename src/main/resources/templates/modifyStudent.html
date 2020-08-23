@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link th:href="@{../css/modify.css}" rel="stylesheet">
+	<title>Modify</title>
+</head>
+<body>
+	<h1>Modify</h1>
+	<div class="formContainer">
+		<form action="#" th:action="@{/modify}" th:object="${editStudent}">
+			<input th:field="*{id}" type="hidden" class="form-control" name="id" id="id">
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">StudentName</label>
+				<div class="col-sm-10">
+					<input th:field="*{studentName}" type="text" class="form-control" id="studentName">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">StudentId</label>
+				<div class="col-sm-10">
+					<input th:field="*{studentId}" type="text" class="form-control" id="studentId">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">Exercises</label>
+				<div class="col-sm-10">
+					<input th:field="*{exercises}" type="text" class="form-control" id="exercises" pattern="[0-9]+(\.[0-9]{1,5})?%?">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">Assignment1</label>
+				<div class="col-sm-10">
+					<input th:field="*{assignment1}" type="text" class="form-control" id="assignment1" pattern="[0-9]+(\.[0-9]{1,5})?%?">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">Assignment2</label>
+				<div class="col-sm-10">
+					<input th:field="*{assignment2}" type="text" class="form-control" id="assignment2" pattern="[0-9]+(\.[0-9]{1,5})?%?">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">Assignment3</label>
+				<div class="col-sm-10">
+					<input th:field="*{assignment3}" type="text" class="form-control" id="assignment3" pattern="[0-9]+(\.[0-9]{1,5})?%?">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">Midterm</label>
+				<div class="col-sm-10">
+					<input th:field="*{midterm}" type="text" class="form-control" id="midterm" pattern="[0-9]+(\.[0-9]{1,5})?%?">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">FinalExam</label>
+				<div class="col-sm-10">
+					<input th:field="*{finalExam}" type="text" class="form-control" id="finalExam" pattern="[0-9]+(\.[0-9]{1,5})?%?">
+				</div>
+			</div>
+			<div class="form-group row buttons">
+				<div><button type="submit" class="btn btn-success">Update</button></div>
+				<div><a th:href="@{/view}">View</a></div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

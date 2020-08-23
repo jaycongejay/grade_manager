@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extra-springsecurity5">
+<head th:fragment="headerfiles">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link th:href="@{css/navBar.css}" rel="stylesheet">
+	<title>Document</title>
+</head>
+<body>
+	<header class="topnav" th:fragment="navbar">
+		<div id="logo">
+			<a th:href="@{/}">
+				<img th:src="@{../images/school.jpg}" src="../static/images/school.jpg" width="30" height="30" class="d-inline-block align-top logo" alt="" loading="lazy">
+			</a>
+		</div>
+		<div>
+			<h1 class="sheridan" sec:authorize="!isAuthenticated()">chool</h1>
+		</div>
+		<div class="travel">
+			<div id="view">
+				<a  class="item" th:href="@{/view}" sec:authorize="isAuthenticated()">View</a>
+			</div>
+			<div id="new">
+				<a  class="item" th:href="@{/add}" sec:authorize="hasRole('ROLE_PROFESSOR')">New</a>
+			</div>
+		</div>
+		<div sec:authorize="isAuthenticated()" class="whologged">
+			<div sec:authentication="name" class="userInfo"></div>
+			<div sec:authentication="principal.authorities" class="userInfo"></div>
+			<div>
+				<form th:action="@{/logout}" method="POST">
+					<input type="submit" value="Logout" class="btn btn-success">
+				</form>
+			</div>
+		</div>
+		<div id="login" sec:authorize="!isAuthenticated()">
+			<a  class="item" th:href="@{/login}"  >login</a>
+		</div>
+	</header>
+</body>
+</html>
